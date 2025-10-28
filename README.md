@@ -438,10 +438,10 @@ YouTube 비디오의 트랜스크립트를 추출합니다.
 
 **지원 URL 형식:**
 ```
-https://www.youtube.com/watch?v=dQw4w9WgXcQ
-https://youtu.be/dQw4w9WgXcQ
-https://www.youtube.com/embed/dQw4w9WgXcQ
-dQw4w9WgXcQ  (ID만)
+https://www.youtube.com/watch?v=HQU2vbsbXkU
+https://youtu.be/HQU2vbsbXkU
+https://www.youtube.com/embed/HQU2vbsbXkU
+HQU2vbsbXkU  (ID만)
 ```
 
 **지원 언어:**
@@ -521,7 +521,7 @@ YouTube 비디오의 메타데이터를 조회합니다.
 ```json
 {
   "success": true,
-  "metadata": "Video ID: dQw4w9WgXcQ\nTitle: Rick Astley - Never Gonna Give You Up (Official Video)\nChannel: Unknown\nViews: None"
+  "metadata": "Video ID: HQU2vbsbXkU\nTitle: Rick Astley - Never Gonna Give You Up (Official Video)\nChannel: Unknown\nViews: None"
 }
 ```
 
@@ -537,7 +537,7 @@ YouTube 비디오의 메타데이터를 조회합니다.
 
 ```
 "이 비디오의 요약을 만들어줄 수 있을까?
-https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+https://www.youtube.com/watch?v=HQU2vbsbXkU"
 ```
 
 Claude가 자동으로 YouTube Summary MCP 도구를 사용하여 비디오를 분석합니다.
@@ -551,7 +551,7 @@ Claude가 자동으로 YouTube Summary MCP 도구를 사용하여 비디오를 �
 
 ```
 "YouTube 비디오를 요약해줄 수 있을까?
-https://youtu.be/dQw4w9WgXcQ
+https://youtu.be/HQU2vbsbXkU
 
 핵심 포인트 5개도 함께 추출해줘."
 ```

@@ -23,25 +23,25 @@ class TestMetadataExtractor:
 
     def test_extract_video_id_from_full_url(self, extractor: MetadataExtractor) -> None:
         """Test extracting video ID from full URL."""
-        url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        url = "https://www.youtube.com/watch?v=HQU2vbsbXkU"
         video_id = extractor.extract_video_id(url)
-        assert video_id == "dQw4w9WgXcQ"
+        assert video_id == "HQU2vbsbXkU"
 
     def test_extract_video_id_from_short_url(self, extractor: MetadataExtractor) -> None:
         """Test extracting video ID from short URL."""
-        url = "https://youtu.be/dQw4w9WgXcQ"
+        url = "https://youtu.be/HQU2vbsbXkU"
         video_id = extractor.extract_video_id(url)
-        assert video_id == "dQw4w9WgXcQ"
+        assert video_id == "HQU2vbsbXkU"
 
     def test_extract_video_id_from_embed_url(self, extractor: MetadataExtractor) -> None:
         """Test extracting video ID from embed URL."""
-        url = "https://www.youtube.com/embed/dQw4w9WgXcQ"
+        url = "https://www.youtube.com/embed/HQU2vbsbXkU"
         video_id = extractor.extract_video_id(url)
-        assert video_id == "dQw4w9WgXcQ"
+        assert video_id == "HQU2vbsbXkU"
 
     def test_extract_video_id_from_direct_id(self, extractor: MetadataExtractor) -> None:
         """Test extracting direct video ID."""
-        video_id = "dQw4w9WgXcQ"
+        video_id = "HQU2vbsbXkU"
         result = extractor.extract_video_id(video_id)
         assert result == video_id
 
@@ -52,7 +52,7 @@ class TestMetadataExtractor:
 
     def test_get_thumbnail_url(self, extractor: MetadataExtractor) -> None:
         """Test getting thumbnail URL."""
-        video_id = "dQw4w9WgXcQ"
+        video_id = "HQU2vbsbXkU"
 
         # Test standard quality
         url_sd = extractor.get_thumbnail_url(video_id, "sd")
@@ -72,7 +72,7 @@ class TestMetadataExtractor:
     def test_format_metadata(self, extractor: MetadataExtractor) -> None:
         """Test formatting metadata."""
         metadata = {
-            "video_id": "dQw4w9WgXcQ",
+            "video_id": "HQU2vbsbXkU",
             "title": "Test Video",
             "channel": "Test Channel",
             "views": "1000",
@@ -81,6 +81,6 @@ class TestMetadataExtractor:
         }
 
         formatted = extractor.format_metadata(metadata)
-        assert "dQw4w9WgXcQ" in formatted
+        assert "HQU2vbsbXkU" in formatted
         assert "Test Video" in formatted
         assert "Test Channel" in formatted

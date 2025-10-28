@@ -63,7 +63,7 @@ uv run simple_client.py --interactive
 #### 예제 1: 트랜스크립트 가져오기
 
 ```bash
-> get_transcript https://www.youtube.com/watch?v=dQw4w9WgXcQ en
+> get_transcript https://www.youtube.com/watch?v=HQU2vbsbXkU en
 
 📤 Request: {"jsonrpc": "2.0", "id": ..., "method": "tools/call", ...}
 
@@ -74,7 +74,7 @@ Never gonna give you up, never gonna let you down...
 #### 예제 2: 비디오 요약
 
 ```bash
-> summarize https://www.youtube.com/watch?v=dQw4w9WgXcQ short
+> summarize https://www.youtube.com/watch?v=HQU2vbsbXkU short
 
 📤 Request: {"jsonrpc": "2.0", "id": ..., "method": "tools/call", ...}
 
@@ -85,7 +85,7 @@ The video is about a person promising...
 #### 예제 3: 핵심 포인트 추출
 
 ```bash
-> key_points https://www.youtube.com/watch?v=dQw4w9WgXcQ 3
+> key_points https://www.youtube.com/watch?v=HQU2vbsbXkU 3
 
 📤 Request: {"jsonrpc": "2.0", "id": ..., "method": "tools/call", ...}
 
@@ -98,12 +98,12 @@ The video is about a person promising...
 #### 예제 4: 메타데이터 조회
 
 ```bash
-> metadata https://www.youtube.com/watch?v=dQw4w9WgXcQ
+> metadata https://www.youtube.com/watch?v=HQU2vbsbXkU
 
 📤 Request: {"jsonrpc": "2.0", "id": ..., "method": "tools/call", ...}
 
 📹 Result:
-Video ID: dQw4w9WgXcQ
+Video ID: HQU2vbsbXkU
 Title: Rick Astley - Never Gonna Give You Up (Official Video)
 Channel: Rick Astley
 Views: 1000000000+
@@ -145,7 +145,7 @@ Error: Failed to fetch transcript: ...
 
 ```
 📹 Result:
-Video ID: dQw4w9WgXcQ
+Video ID: HQU2vbsbXkU
 Title: Rick Astley - Never Gonna Give You Up (Official Video) (4K Remaster)
 Channel: Unknown
 Views: None
@@ -162,16 +162,16 @@ Upload Date: None
 
 ```bash
 # 표준 URL
-> get_transcript https://www.youtube.com/watch?v=dQw4w9WgXcQ
+> get_transcript https://www.youtube.com/watch?v=HQU2vbsbXkU
 
 # 단축 URL
-> get_transcript https://youtu.be/dQw4w9WgXcQ
+> get_transcript https://youtu.be/HQU2vbsbXkU
 
 # 임베드 URL
-> get_transcript https://www.youtube.com/embed/dQw4w9WgXcQ
+> get_transcript https://www.youtube.com/embed/HQU2vbsbXkU
 
 # 비디오 ID만
-> get_transcript dQw4w9WgXcQ
+> get_transcript HQU2vbsbXkU
 ```
 
 ---

@@ -165,7 +165,7 @@ def example_get_transcript(client: SimpleMCPClient) -> None:
         result = client.call_tool(
             "get_transcript",
             {
-                "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                "video_url": "https://www.youtube.com/watch?v=HQU2vbsbXkU",
                 "language": "en",
             },
         )
@@ -187,7 +187,7 @@ def example_summarize(client: SimpleMCPClient) -> None:
         result = client.call_tool(
             "summarize_video",
             {
-                "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                "video_url": "https://www.youtube.com/watch?v=HQU2vbsbXkU",
                 "summary_length": "short",
             },
         )
@@ -209,7 +209,7 @@ def example_key_points(client: SimpleMCPClient) -> None:
         result = client.call_tool(
             "extract_key_points",
             {
-                "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                "video_url": "https://www.youtube.com/watch?v=HQU2vbsbXkU",
                 "num_points": 3,
             },
         )
@@ -231,7 +231,7 @@ def example_metadata(client: SimpleMCPClient) -> None:
         result = client.call_tool(
             "get_video_metadata",
             {
-                "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                "video_url": "https://www.youtube.com/watch?v=HQU2vbsbXkU",
             },
         )
 

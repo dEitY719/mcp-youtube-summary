@@ -51,7 +51,7 @@ async def get_transcript_example(session: ClientSession) -> None:
     print("=" * 60)
 
     # YouTube Rickroll video (famous example)
-    video_url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    video_url = "https://www.youtube.com/watch?v=HQU2vbsbXkU"
 
     result = await call_tool(
         session,
@@ -72,7 +72,7 @@ async def summarize_video_example(session: ClientSession) -> None:
     print("\n\n📊 EXAMPLE 2: Summarize Video")
     print("=" * 60)
 
-    video_url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    video_url = "https://www.youtube.com/watch?v=HQU2vbsbXkU"
 
     result = await call_tool(
         session,
@@ -93,7 +93,7 @@ async def extract_key_points_example(session: ClientSession) -> None:
     print("\n\n🎯 EXAMPLE 3: Extract Key Points")
     print("=" * 60)
 
-    video_url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    video_url = "https://www.youtube.com/watch?v=HQU2vbsbXkU"
 
     result = await call_tool(
         session,
@@ -114,7 +114,7 @@ async def get_metadata_example(session: ClientSession) -> None:
     print("\n\n📹 EXAMPLE 4: Get Video Metadata")
     print("=" * 60)
 
-    video_url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    video_url = "https://www.youtube.com/watch?v=HQU2vbsbXkU"
 
     result = await call_tool(
         session,

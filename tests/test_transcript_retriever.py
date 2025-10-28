@@ -13,19 +13,19 @@ class TestTranscriptRetriever:
 
     def test_extract_video_id_from_full_url(self) -> None:
         """Test extracting video ID from full YouTube URL."""
-        url = "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+        url = "https://www.youtube.com/watch?v=HQU2vbsbXkU"
         video_id = TranscriptRetriever.extract_video_id(url)
-        assert video_id == "dQw4w9WgXcQ"
+        assert video_id == "HQU2vbsbXkU"
 
     def test_extract_video_id_from_short_url(self) -> None:
         """Test extracting video ID from shortened URL."""
-        url = "https://youtu.be/dQw4w9WgXcQ"
+        url = "https://youtu.be/HQU2vbsbXkU"
         video_id = TranscriptRetriever.extract_video_id(url)
-        assert video_id == "dQw4w9WgXcQ"
+        assert video_id == "HQU2vbsbXkU"
 
     def test_extract_video_id_from_direct_id(self) -> None:
         """Test that direct video ID is recognized."""
-        video_id = "dQw4w9WgXcQ"
+        video_id = "HQU2vbsbXkU"
         result = TranscriptRetriever.extract_video_id(video_id)
         assert result == video_id
 

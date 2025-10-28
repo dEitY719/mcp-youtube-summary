@@ -66,14 +66,14 @@ uv run client.py
 
 **인터랙티브 모드에서:**
 ```
-> get_transcript https://www.youtube.com/watch?v=dQw4w9WgXcQ en
+> get_transcript https://www.youtube.com/watch?v=HQU2vbsbXkU en
 ```
 
 **출력:**
 ```
 🚀 Calling: get_transcript
    Arguments: {
-     "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+     "video_url": "https://www.youtube.com/watch?v=HQU2vbsbXkU",
      "language": "en"
    }
 ============================================================
@@ -85,14 +85,14 @@ Never gonna give you up, never gonna let you down...
 ### 예제 2: 비디오 요약
 
 ```bash
-> summarize_video https://www.youtube.com/watch?v=dQw4w9WgXcQ short
+> summarize_video https://www.youtube.com/watch?v=HQU2vbsbXkU short
 ```
 
 **출력:**
 ```
 🚀 Calling: summarize_video
    Arguments: {
-     "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+     "video_url": "https://www.youtube.com/watch?v=HQU2vbsbXkU",
      "summary_length": "short"
    }
 ============================================================
@@ -104,14 +104,14 @@ The song is about never giving up and staying loyal...
 ### 예제 3: 핵심 포인트 추출
 
 ```bash
-> extract_key_points https://www.youtube.com/watch?v=dQw4w9WgXcQ 3
+> extract_key_points https://www.youtube.com/watch?v=HQU2vbsbXkU 3
 ```
 
 **출력:**
 ```
 🚀 Calling: extract_key_points
    Arguments: {
-     "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+     "video_url": "https://www.youtube.com/watch?v=HQU2vbsbXkU",
      "num_points": 3
    }
 ============================================================
@@ -125,19 +125,19 @@ The song is about never giving up and staying loyal...
 ### 예제 4: 메타데이터 조회
 
 ```bash
-> get_video_metadata https://www.youtube.com/watch?v=dQw4w9WgXcQ
+> get_video_metadata https://www.youtube.com/watch?v=HQU2vbsbXkU
 ```
 
 **출력:**
 ```
 🚀 Calling: get_video_metadata
    Arguments: {
-     "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+     "video_url": "https://www.youtube.com/watch?v=HQU2vbsbXkU"
    }
 ============================================================
 
 📹 Result:
-Video ID: dQw4w9WgXcQ
+Video ID: HQU2vbsbXkU
 Title: Rick Astley - Never Gonna Give You Up
 Channel: Rick Astley
 Views: 1000000000+
@@ -149,16 +149,16 @@ Views: 1000000000+
 
 ```bash
 # 긴 URL
-> get_transcript https://www.youtube.com/watch?v=dQw4w9WgXcQ
+> get_transcript https://www.youtube.com/watch?v=HQU2vbsbXkU
 
 # 짧은 URL
-> get_transcript https://youtu.be/dQw4w9WgXcQ
+> get_transcript https://youtu.be/HQU2vbsbXkU
 
 # 임베드 URL
-> get_transcript https://www.youtube.com/embed/dQw4w9WgXcQ
+> get_transcript https://www.youtube.com/embed/HQU2vbsbXkU
 
 # 비디오 ID만
-> get_transcript dQw4w9WgXcQ
+> get_transcript HQU2vbsbXkU
 ```
 
 ## 🌍 지원하는 언어
@@ -317,7 +317,7 @@ async def main():
             result = await session.call_tool(
                 "summarize_video",
                 {
-                    "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+                    "video_url": "https://www.youtube.com/watch?v=HQU2vbsbXkU",
                     "summary_length": "short",
                 }
             )

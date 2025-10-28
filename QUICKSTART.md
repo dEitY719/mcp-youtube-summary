@@ -62,7 +62,7 @@ Fetch the raw transcript from a YouTube video:
 {
   "tool": "get_transcript",
   "arguments": {
-    "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "video_url": "https://www.youtube.com/watch?v=HQU2vbsbXkU",
     "language": "en"
   }
 }
@@ -76,7 +76,7 @@ Get an intelligent summary of a video:
 {
   "tool": "summarize_video",
   "arguments": {
-    "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "video_url": "https://www.youtube.com/watch?v=HQU2vbsbXkU",
     "summary_length": "medium",
     "language": "en"
   }
@@ -96,7 +96,7 @@ Get the most important sentences from a video:
 {
   "tool": "extract_key_points",
   "arguments": {
-    "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
+    "video_url": "https://www.youtube.com/watch?v=HQU2vbsbXkU",
     "num_points": 5,
     "language": "en"
   }
@@ -111,7 +111,7 @@ Get basic info about a video (title, channel, views, etc.):
 {
   "tool": "get_video_metadata",
   "arguments": {
-    "video_url": "https://www.youtube.com/watch?v=dQw4w9WgXcQ"
+    "video_url": "https://www.youtube.com/watch?v=HQU2vbsbXkU"
   }
 }
 ```
@@ -132,7 +132,7 @@ Example with short URL:
 {
   "tool": "summarize_video",
   "arguments": {
-    "video_url": "youtu.be/dQw4w9WgXcQ"
+    "video_url": "youtu.be/HQU2vbsbXkU"
   }
 }
 ```
