@@ -1,12 +1,11 @@
-"""Entry point for YouTube Summary MCP Server."""
+"""Entry point for YouTube Summary MCP Server using FastMCP."""
 
-import asyncio
 import logging
 import sys
 from typing import Optional
 
 from .config_manager import get_config
-from .server import create_and_run_server
+from .server import create_server
 
 
 def setup_logging(log_level: Optional[str] = None) -> None:
@@ -23,7 +22,7 @@ def setup_logging(log_level: Optional[str] = None) -> None:
         level=getattr(logging, effective_level),
         format="%(asctime)s - %(name)s - %(levelname)s - %(message)s",
         handlers=[
-            logging.StreamHandler(sys.stdout),
+            logging.StreamHandler(sys.stderr),
         ],
     )
 
@@ -48,8 +47,9 @@ def main() -> int:
             config.server_version,
         )
 
-        # Run the server
-        asyncio.run(create_and_run_server())
+        # Create and run the FastMCP server
+        server = create_server()
+        server.run()
 
         return 0
 

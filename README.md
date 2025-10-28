@@ -2,6 +2,8 @@
 
 A powerful MCP (Model Context Protocol) server for summarizing YouTube videos with transcript fetching, intelligent summarization, key point extraction, and metadata retrieval.
 
+**Built with FastMCP** for simple, decorator-based tool registration and automatic MCP protocol handling.
+
 ## Features
 
 - **Transcript Fetching**: Retrieve transcripts from any YouTube video
@@ -11,6 +13,19 @@ A powerful MCP (Model Context Protocol) server for summarizing YouTube videos wi
 - **Multi-language Support**: Support for multiple languages
 - **Error Handling**: Comprehensive error handling and logging
 - **SOLID Principles**: Well-designed architecture following SOLID principles
+- **FastMCP Framework**: Modern, decorator-based MCP server implementation
+- **Type Safe**: 100% type hint coverage with Pydantic validation
+
+## Architecture
+
+This project uses **FastMCP**, a modern, high-level MCP framework that simplifies server development:
+
+- **Decorator-based Tool Registration**: Simple `@server.tool()` decorators instead of complex boilerplate
+- **Automatic Schema Generation**: Tool schemas auto-generated from type hints
+- **Automatic Route Handling**: MCP protocol routing handled automatically
+- **JSON Response Format**: All tools return structured JSON for better integration
+
+For detailed information about the FastMCP refactoring, see [FASTMCP_REFACTORING.md](FASTMCP_REFACTORING.md).
 
 ## Installation
 
