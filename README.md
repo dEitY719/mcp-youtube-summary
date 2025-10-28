@@ -167,6 +167,73 @@ SERVER_VERSION=0.1.0
 
 ---
 
+## ⚡ 빠른 설정 (Quick Setup)
+
+설정 파일만 수정하면 바로 사용 가능합니다!
+
+### Claude Desktop 설정 (claude_desktop_config.json)
+
+**Windows:**
+```json
+{
+  "mcpServers": {
+    "youtube-summary": {
+      "command": "python",
+      "args": ["-m", "youtube_summary_mcp.main"],
+      "env": {
+        "PYTHONPATH": "C:\\path\\to\\youtube-summary-mcp"
+      }
+    }
+  }
+}
+```
+
+**macOS/Linux:**
+```json
+{
+  "mcpServers": {
+    "youtube-summary": {
+      "command": "python3",
+      "args": ["-m", "youtube_summary_mcp.main"],
+      "env": {
+        "PYTHONPATH": "/path/to/youtube-summary-mcp"
+      }
+    }
+  }
+}
+```
+
+### Cursor 설정 (cursor_mcp_config.json 또는 settings.json)
+
+```json
+{
+  "mcp": {
+    "servers": [
+      {
+        "id": "youtube-summary",
+        "name": "YouTube Summary",
+        "type": "command",
+        "command": "python",
+        "args": ["-m", "youtube_summary_mcp.main"],
+        "env": {
+          "PYTHONPATH": "/path/to/youtube-summary-mcp"
+        }
+      }
+    ]
+  }
+}
+```
+
+**설정 파일 위치:**
+- **Claude Desktop (Windows)**: `C:\Users\[사용자명]\AppData\Roaming\Claude\claude_desktop_config.json`
+- **Claude Desktop (macOS)**: `~/Library/Application Support/Claude/claude_desktop_config.json`
+- **Claude Desktop (Linux)**: `~/.config/Claude/claude_desktop_config.json`
+- **Cursor (모든 OS)**: 설정 → MCP 섹션 또는 `~/.config/Cursor/User/settings.json`
+
+> 💡 **팁**: `/path/to/youtube-summary-mcp` 부분을 실제 프로젝트 경로로 바꾸세요!
+
+---
+
 ## 🔧 MCP 클라이언트 설정 (매우 중요!)
 
 ### 📌 MCP란?
