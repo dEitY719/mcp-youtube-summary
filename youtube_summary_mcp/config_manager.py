@@ -90,6 +90,7 @@ class ConfigManager(BaseSettings):
         env_file = ".env"
         env_file_encoding = "utf-8"
         case_sensitive = False
+        extra = "ignore"  # .env 파일의 extra 환경 변수 무시
 
     @field_validator("summary_length")
     @classmethod
