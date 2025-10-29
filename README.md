@@ -93,8 +93,11 @@ A powerful MCP (Model Context Protocol) server for summarizing YouTube videos wi
 youtube-summary-mcp/
 ├── youtube_summary_mcp/           # 메인 패키지
 │   ├── __init__.py                # 패키지 초기화
-│   ├── server.py                  # FastMCP 서버 구현
-│   ├── main.py                    # 진입점
+│   ├── server.py                  # FastMCP 서버 구현 (stdio)
+│   ├── main.py                    # 진입점 (stdio)
+│   ├── server_sse.py              # FastMCP 서버 구현 (SSE)
+│   ├── main_sse.py                # 진입점 (SSE)
+│   ├── asgi.py                    # ASGI 앱 (Uvicorn/Gunicorn용)
 │   ├── config_manager.py          # 설정 관리 (Pydantic)
 │   ├── transcript_retriever.py    # 트랜스크립트 추출
 │   ├── summary_generator.py       # 텍스트 요약 엔진
@@ -231,6 +234,109 @@ SERVER_VERSION=0.1.0
 - **Cursor (모든 OS)**: 설정 → MCP 섹션 또는 `~/.config/Cursor/User/settings.json`
 
 > 💡 **팁**: `/path/to/youtube-summary-mcp` 부분을 실제 프로젝트 경로로 바꾸세요!
+
+---
+
+## 🌐 SSE 전송 방식 설정
+
+표준 stdio 방식 외에도 SSE(Server-Sent Events) 방식으로 MCP 서버를 실행할 수 있습니다. SSE는 HTTP 기반의 연결 방식으로, 웹 환경이나 특정 MCP 클라이언트에 유용합니다.
+
+### SSE 방식 직접 실행 (권장)
+
+FastMCP가 내장된 Uvicorn 서버를 자동으로 시작합니다.
+
+```bash
+# 기본값 (0.0.0.0:10719)
+uv run youtube-summary-mcp-sse
+
+# 또는 모듈로 직접 실행
+uv run python -m youtube_summary_mcp.main_sse
+```
+
+### 커스텀 호스트/포트 설정
+
+```bash
+# 환경 변수를 통한 설정
+MCP_SSE_HOST="127.0.0.1" MCP_SSE_PORT="8080" uv run youtube-summary-mcp-sse
+
+# 여러 변수 설정
+export MCP_SSE_HOST="0.0.0.0"
+export MCP_SSE_PORT="9000"
+export MCP_SSE_PATH="/mcp"  # SSE 엔드포인트 경로 (기본값: /sse)
+uv run youtube-summary-mcp-sse
+```
+
+**지원 환경 변수:**
+- `MCP_SSE_HOST`: 바인드할 호스트 (기본값: `0.0.0.0`)
+- `MCP_SSE_PORT`: 바인드할 포트 (기본값: `10719`)
+- `MCP_SSE_PATH`: SSE 엔드포인트 경로 (기본값: `/sse`)
+
+### ASGI 서버로 실행 (고급)
+
+FastMCP 앱을 ASGI 서버(Uvicorn, Gunicorn 등)로 실행할 수도 있습니다:
+
+```bash
+# Uvicorn으로 실행
+uvicorn youtube_summary_mcp.asgi:app --host 0.0.0.0 --port 10719
+
+# 환경 변수와 함께
+MCP_SSE_HOST="127.0.0.1" MCP_SSE_PORT="8080" uvicorn youtube_summary_mcp.asgi:app
+```
+
+### Claude Desktop 설정 (SSE 방식)
+
+#### 설정 방법
+
+1. **SSE 서버 시작:**
+   ```bash
+   # 터미널에서
+   uv run youtube-summary-mcp-sse
+   ```
+   서버가 `http://0.0.0.0:10719/sse`에서 실행됩니다.
+
+2. **Claude Desktop 설정 파일 수정:**
+
+**Windows:**
+```json
+{
+  "mcpServers": {
+    "youtube-summary-sse": {
+      "url": "http://localhost:10719/sse",
+      "disabled": false,
+      "alwaysAllow": []
+    }
+  }
+}
+```
+
+**macOS/Linux:**
+```json
+{
+  "mcpServers": {
+    "youtube-summary-sse": {
+      "url": "http://localhost:10719/sse",
+      "disabled": false,
+      "alwaysAllow": []
+    }
+  }
+}
+```
+
+3. **Claude Desktop 재시작**
+
+### stdio vs SSE 비교
+
+| 항목 | stdio | SSE |
+|------|-------|-----|
+| 전송 방식 | 표준 입출력 | HTTP SSE |
+| 설정 방법 | command 기반 | URL 기반 |
+| 포트 바인딩 | 필요 없음 | 필요함 |
+| 시작 방식 | 자동 | 수동 (별도 터미널) |
+| 성능 | 빠름 | 안정적 |
+| 웹 환경 | 미지원 | 지원 |
+| 추천 사용 처 | 대부분의 경우 | 웹 기반 클라이언트 |
+
+> **팁**: 둘 다 동시에 실행 가능합니다. stdio는 항상 자동 시작되고, SSE는 필요할 때 수동으로 시작하면 됩니다!
 
 ---
 

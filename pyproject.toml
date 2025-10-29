@@ -41,6 +41,7 @@ nlp = [
 
 [project.scripts]
 youtube-summary-mcp = "youtube_summary_mcp.main:main"
+youtube-summary-mcp-sse = "youtube_summary_mcp.main_sse:main_sse"
 
 [tool.black]
 line-length = 100
